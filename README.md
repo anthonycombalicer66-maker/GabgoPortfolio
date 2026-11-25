@@ -2,7 +2,7 @@
 
 Personal portfolio and printable résumé built with HTML5, CSS custom properties (Light & Dark themes), and vanilla JavaScript.
 
-- **Live Portfolio:** https://anthonycombalicer66-maker.github.io/
+- **Live Portfolio:** https://anthonycombalicer66-maker.github.io/GabgoPortfolio/
 - **Online Résumé:** https://anthonycombalicer66-maker.github.io/resume.html
 - **PDF Résumé:** `assets/Anthony_Combalicer_Resume.pdf`
 
