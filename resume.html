@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Anthony Combalicer — Résumé | Web &amp; Game Developer</title>
+  <meta name="description" content="Résumé of Anthony Combalicer, BS Information Technology student at Forbes College specializing in interactive web development and browser games.">
+  <link rel="canonical" href="https://anthonycombalicer66-maker.github.io/resume.html">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d4ed8'/%3E%3Ctext x='32' y='42' font-size='28' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EAC%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --desk: #e8eef6;
+      --paper: #ffffff;
+      --ink: #0f1b2d;
+      --muted: #4b5a70;
+      --line: #d9e0ea;
+      --accent: #1d4ed8;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--desk);
+      color: var(--ink);
+      font: 400 0.94rem/1.55 "Plus Jakarta Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      padding: 0 16px 48px;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .toolbar {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      max-width: 850px;
+      margin: 0 auto 20px;
+      padding: 12px 18px;
+      background: rgba(13, 22, 38, 0.94);
+      backdrop-filter: blur(8px);
+      color: #eef3fb;
+      border-radius: 0 0 14px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      box-shadow: 0 10px 28px rgba(15, 27, 45, 0.18);
+    }
+
+    .toolbar a.back {
+      color: #d4e0f2;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .toolbar a.back:hover {
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .toolbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .tbtn {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: 1.5px solid #ffffff;
+      background: #ffffff;
+      color: #0d1626;
+      font: 600 0.86rem "Plus Jakarta Sans", system-ui, sans-serif;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background-color 0.16s ease, border-color 0.16s ease, transform 0.16s ease;
+    }
+
+    .tbtn:hover {
+      background: #e2ebfa;
+      border-color: #e2ebfa;
+      text-decoration: none;
+      transform: translateY(-1px);
+    }
+
+    .tbtn.ghost {
+      background: transparent;
+      color: #ffffff;
+      border-color: #4a6288;
+    }
+
+    .tbtn.ghost:hover {
+      background: rgba(255, 255, 255, 0.12);
+      border-color: #84a0c9;
+    }
+
+    .sheet {
+      max-width: 850px;
+      margin: 0 auto;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      box-shadow: 0 18px 48px rgba(15, 27, 45, 0.12);
+      padding: 44px 50px;
+    }
+
+    .r-header {
+      border-bottom: 2px solid var(--ink);
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .r-name {
+      margin: 0;
+      font-size: 2rem;
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .r-role {
+      margin: 5px 0 0;
+      font-size: 1.02rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
+    .r-contact {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      text-align: right;
+      font-size: 0.85rem;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    .r-contact a {
+      color: var(--ink);
+      font-weight: 500;
+    }
+
+    .r-contact a:hover {
+      color: var(--accent);
+    }
+
+    .r-section {
+      margin-bottom: 20px;
+    }
+
+    .r-section:last-child {
+      margin-bottom: 0;
+    }
+
+    .r-section h2 {
+      margin: 0 0 10px;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.09em;
+      text-transform: uppercase;
+      color: var(--accent);
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 5px;
+    }
+
+    .summary {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .skills-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+
+    .skills-table th,
+    .skills-table td {
+      padding: 4px 0;
+      vertical-align: top;
+      text-align: left;
+    }
+
+    .skills-table th {
+      width: 215px;
+      color: var(--ink);
+      font-weight: 700;
+      padding-right: 14px;
+    }
+
+    .skills-table td {
+      color: var(--muted);
+    }
+
+    .item {
+      margin-bottom: 15px;
+    }
+
+    .item:last-child {
+      margin-bottom: 0;
+    }
+
+    .item-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .item-title {
+      margin: 0;
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--ink);
+    }
+
+    .item-sub {
+      font-weight: 500;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .item-links {
+      font-size: 0.84rem;
+      font-weight: 600;
+      display: flex;
+      gap: 12px;
+    }
+
+    .bullets {
+      margin: 5px 0 0;
+      padding-left: 18px;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .bullets li {
+      margin-bottom: 4px;
+    }
+
+    .bullets li:last-child {
+      margin-bottom: 0;
+    }
+
+    .bullets strong {
+      color: var(--ink);
+    }
+
+    .edu-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .edu-degree {
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 0.98rem;
+    }
+
+    .edu-meta {
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .edu-school {
+      margin: 3px 0 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 680px) {
+      .sheet {
+        padding: 28px 22px;
+      }
+
+      .r-contact {
+        text-align: left;
+      }
+
+      .skills-table th,
+      .skills-table td {
+        display: block;
+        width: 100%;
+        padding: 2px 0;
+      }
+
+      .skills-table td {
+        margin-bottom: 8px;
+      }
+    }
+
+    @media print {
+      @page {
+        size: letter;
+        margin: 0.42in 0.5in;
+      }
+
+      body {
+        background: #ffffff;
+        padding: 0;
+        font-size: 9pt;
+        line-height: 1.36;
+      }
+
+      .toolbar {
+        display: none !important;
+      }
+
+      .sheet {
+        max-width: none;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        padding: 0;
+      }
+
+      .r-header {
+        padding-bottom: 10px;
+        margin-bottom: 11px;
+      }
+
+      .r-name {
+        font-size: 18pt;
+      }
+
+      .r-role {
+        font-size: 9.5pt;
+        margin-top: 3px;
+      }
+
+      .r-contact {
+        font-size: 8.2pt;
+        line-height: 1.48;
+      }
+
+      .r-section {
+        margin-bottom: 11px;
+      }
+
+      .r-section h2 {
+        font-size: 7.8pt;
+        margin-bottom: 6px;
+        padding-bottom: 3px;
+      }
+
+      .skills-table {
+        font-size: 8.8pt;
+      }
+
+      .skills-table th,
+      .skills-table td {
+        padding: 2.5px 0;
+      }
+
+      .item {
+        margin-bottom: 9px;
+      }
+
+      .item-title {
+        font-size: 9.4pt;
+      }
+
+      .item-sub,
+      .item-links {
+        font-size: 8.2pt;
+      }
+
+      .bullets {
+        margin-top: 3px;
+        font-size: 8.7pt;
+      }
+
+      .bullets li {
+        margin-bottom: 2.5px;
+      }
+
+      .edu-degree {
+        font-size: 9.4pt;
+      }
+
+      .edu-meta,
+      .edu-school {
+        font-size: 8.6pt;
+      }
+
+      a {
+        color: var(--ink);
+        text-decoration: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="toolbar" role="region" aria-label="Résumé actions">
+    <a class="back" href="index.html">&larr; Back to portfolio</a>
+    <div class="toolbar-actions">
+      <a class="tbtn" href="assets/Anthony_Combalicer_Resume.pdf" download="Anthony_Combalicer_Resume.pdf">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download PDF
+      </a>
+      <button class="tbtn ghost" type="button" onclick="window.print()">Print</button>
+    </div>
+  </div>
+
+  <main class="sheet">
+    <header class="r-header">
+      <div>
+        <h1 class="r-name">Anthony Combalicer</h1>
+        <p class="r-role">Web &amp; Game Developer</p>
+      </div>
+      <ul class="r-contact">
+        <li>Legazpi City, Albay &nbsp;·&nbsp; <a href="tel:+639695362515">09695362515</a> &nbsp;·&nbsp; <a href="mailto:anthonycombalicer66@gmail.com">anthonycombalicer66@gmail.com</a></li>
+        <li>
+          <a href="https://anthonycombalicer66-maker.github.io/" target="_blank" rel="noopener">anthonycombalicer66-maker.github.io</a>
+          &nbsp;·&nbsp;
+          <a href="https://github.com/anthonycombalicer66-maker" target="_blank" rel="noopener">github.com/anthonycombalicer66-maker</a>
+          &nbsp;·&nbsp;
+          <a href="https://www.linkedin.com/in/anthony-combalicer-28a39a403" target="_blank" rel="noopener">linkedin.com/in/anthony-combalicer-28a39a403</a>
+        </li>
+      </ul>
+    </header>
+
+    <section class="r-section">
+      <h2>Summary</h2>
+      <p class="summary">
+        BS Information Technology student specializing in interactive front-end engineering, client-side state management, and real-time browser games. Experienced in shipping zero-dependency web apps, e-commerce interfaces, single-file RPGs, and tournament bracket tools in vanilla HTML, CSS, and JavaScript. Seeking a Web or Game Development internship to contribute production code and grow alongside an engineering team.
+      </p>
+    </section>
+
+    <section class="r-section">
+      <h2>Technical Skills</h2>
+      <table class="skills-table">
+        <tr>
+          <th>Front-End &amp; Interactive UI</th>
+          <td>HTML5, CSS3, JavaScript (ES6+), Responsive Design, Client-Side State Management, Game Loops</td>
+        </tr>
+        <tr>
+          <th>Programming &amp; Databases</th>
+          <td>Java, Java GUI (NetBeans), MySQL</td>
+        </tr>
+        <tr>
+          <th>Workflow &amp; Deployment</th>
+          <td>Git, GitHub, GitHub Pages</td>
+        </tr>
+      </table>
+    </section>
+
+    <section class="r-section">
+      <h2>Projects</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <h3 class="item-title">CraftHub <span class="item-sub">— Interactive Minecraft Guide Directory (HTML, CSS, JavaScript)</span></h3>
+          <div class="item-links">
+            <a href="https://anthonycombalicer66-maker.github.io/CraftHub/" target="_blank" rel="noopener">Live Demo</a>
+            <a href="https://github.com/anthonycombalicer66-maker/CraftHub" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Built a searchable Minecraft knowledge hub combining instant keyword search with five simultaneous filters (category, difficulty, topic, game mode, and version guidance).</li>
+          <li>Engineered a single source-of-truth filter state in vanilla JavaScript to keep the live match counter and “Surprise me” random guide picker synchronized without page reloads.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <h3 class="item-title">Pixel-Descent <span class="item-sub">— Single-File Browser Action RPG (HTML5, JavaScript)</span></h3>
+          <div class="item-links">
+            <a href="https://anthonycombalicer66-maker.github.io/Pixel-Descent/" target="_blank" rel="noopener">Play Live</a>
+            <a href="https://github.com/anthonycombalicer66-maker/Pixel-Descent" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Developed a self-contained action RPG running entirely from one HTML file with floor-based dungeon progression (Floor 1 – Lava Cavern), live minimap rendering, and pixel-art visuals.</li>
+          <li>Implemented a custom real-time game loop synchronizing vitality and mana orbs, XP progression, gold drops, passive skill points, and a skill/potion hotbar with zero external frameworks.</li>
+        </ul>
+      </article>
+
+      <article class="item">
+        <div class="item-head">
+          <h3 class="item-title">BiteRush <span class="item-sub">— Fast-Food Ordering Storefront (HTML, CSS, JavaScript)</span></h3>
+          <div class="item-links">
+            <a href="https://anthonycombalicer66-maker.github.io/BiteRush/" target="_blank" rel="noopener">Live Demo</a>
+            <a href="https://github.com/anthonycombalicer66-maker/BiteRushAndCraftHub-Updated-" target="_blank" rel="noopener">Source Code</a>
+          </div>
+        </div>
+        <ul class="bullets">
+          <li>Created a responsive food-ordering interface organized by meal time (breakfast, lunch, dinner, burgers &amp; fries) with Philippine peso pricing and a bestseller showcase.</li>
+          <li>Coordinated live search, dish sorting, availability filters, wishlist toggles, and real-time cart counters across UI components in plain JavaScript.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="r-section">
+      <h2>Leadership &amp; Event Experience</h2>
+
+      <article class="item">
+        <div class="item-head">
+          <h3 class="item-title">Event Organizer — Intramurals Tekken Tournament <span class="item-sub">| Forbes College</span></h3>
+        </div>
+        <ul class="bullets">
+          <li>Organized and managed bracket scheduling, match flow, and tournament operations for the campus Intramurals Tekken competition.</li>
+          <li>Built custom JavaScript tournament bracket utilities (<strong>Tekken 7 Bracket System</strong> and <strong>MLBB Bracket System</strong> on <a href="https://github.com/anthonycombalicer66-maker" target="_blank" rel="noopener">GitHub</a>) to streamline match tracking.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="r-section">
+      <h2>Education</h2>
+      <div class="edu-row">
+        <span class="edu-degree">Bachelor of Science in Information Technology (BSIT)</span>
+        <span class="edu-meta">Expected 2029</span>
+      </div>
+      <p class="edu-school">Forbes College — Relevant Coursework: Java Programming, Java GUI Development (NetBeans), Database Management (MySQL), Web Development</p>
+    </section>
+  </main>
+</body>
+</html>

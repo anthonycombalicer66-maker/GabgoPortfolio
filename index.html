@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Anthony Combalicer | Web &amp; Game Developer</title>
+  <meta name="description" content="Portfolio of Anthony Combalicer, a 2nd-year BSIT student at Forbes College building interactive web apps and browser games. Open to web and game development internships.">
+  <meta name="theme-color" content="#f7f9fc">
+  <link rel="canonical" href="https://anthonycombalicer66-maker.github.io/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://anthonycombalicer66-maker.github.io/">
+  <meta property="og:title" content="Anthony Combalicer | Web &amp; Game Developer">
+  <meta property="og:description" content="BSIT student building interactive websites and browser games. Try live demos of CraftHub, Pixel-Descent, and BiteRush.">
+  <meta property="og:image" content="https://anthonycombalicer66-maker.github.io/assets/og-card.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Anthony Combalicer | Web &amp; Game Developer">
+  <meta name="twitter:description" content="BSIT student building interactive websites and browser games. Live demos and source code included.">
+  <meta name="twitter:image" content="https://anthonycombalicer66-maker.github.io/assets/og-card.png">
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231d4ed8'/%3E%3Ctext x='32' y='42' font-size='28' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EAC%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+
+  <script>
+    (function () {
+      try {
+        var saved = localStorage.getItem("theme");
+        var prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+        var isDark = saved === "dark" || (saved !== "light" && prefersDark);
+        if (saved === "light" || saved === "dark") {
+          document.documentElement.setAttribute("data-theme", saved);
+        }
+        var meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", isDark ? "#080d18" : "#f7f9fc");
+      } catch (e) {}
+    })();
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Anthony Combalicer",
+    "jobTitle": "Web & Game Developer",
+    "url": "https://anthonycombalicer66-maker.github.io/",
+    "email": "mailto:anthonycombalicer66@gmail.com",
+    "telephone": "+639695362515",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Legazpi City",
+      "addressRegion": "Albay",
+      "addressCountry": "PH"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Forbes College"
+    },
+    "sameAs": [
+      "https://github.com/anthonycombalicer66-maker",
+      "https://www.linkedin.com/in/anthony-combalicer-28a39a403"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#top">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="rail header-bar">
+      <a class="brand" href="#top">
+        <span class="brand-mark" aria-hidden="true">AC</span>
+        <span class="brand-name">Anthony Combalicer</span>
+      </a>
+
+      <nav id="nav-links" class="nav-links" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#activity">Activity</a>
+        <a href="#skills">Stack</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button id="cmd-trigger" class="icon-pill cmd-pill" type="button" aria-label="Open command palette">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <span class="cmd-text">Quick jump</span>
+          <kbd id="cmd-kbd" data-cmd-kbd>⌘K</kbd>
+        </button>
+
+        <button id="theme" class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Switch to dark mode" title="Toggle light / dark theme (T)">
+          <span class="ts-sky" aria-hidden="true">
+            <span class="ts-stars">
+              <span class="ts-star ts-star--lg" style="top: 5px; left: 10px;"></span>
+              <span class="ts-star ts-star--md" style="top: 15px; left: 20px;"></span>
+              <span class="ts-star ts-star--sm" style="top: 8px; left: 26px;"></span>
+              <span class="ts-star ts-star--dot" style="top: 22px; left: 11px;"></span>
+              <span class="ts-star ts-star--dot" style="top: 6px; left: 19px;"></span>
+              <span class="ts-star ts-star--dot" style="top: 21px; left: 28px;"></span>
+            </span>
+            <span class="ts-clouds ts-clouds--back"></span>
+            <span class="ts-clouds ts-clouds--front"></span>
+            <span class="ts-thumb-wrap">
+              <span class="ts-halo ts-halo--3"></span>
+              <span class="ts-halo ts-halo--2"></span>
+              <span class="ts-halo ts-halo--1"></span>
+              <span class="ts-orb">
+                <span class="ts-moon">
+                  <span class="ts-crater ts-crater--1"></span>
+                  <span class="ts-crater ts-crater--2"></span>
+                  <span class="ts-crater ts-crater--3"></span>
+                </span>
+              </span>
+            </span>
+          </span>
+        </button>
+
+        <button id="menu-toggle" class="icon-pill menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation menu">
+          <span class="menu-bars" aria-hidden="true"></span>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <div class="scroll-track" aria-hidden="true"><div id="scroll-progress" class="scroll-fill"></div></div>
+  </header>
+
+  <main id="top" class="page-shell">
+    <section class="hero-band">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="rail hero-inner">
+        <div class="hero-meta-bar">
+          <span class="status-pill">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            Open to Web &amp; Game Dev Internships
+          </span>
+          <span class="coord-tag">13.1391° N, 123.7438° E · LEGAZPI</span>
+        </div>
+
+        <p class="hero-eyebrow" data-scramble="WEB &amp; GAME DEVELOPER // VANILLA JS ARCHITECT">WEB &amp; GAME DEVELOPER // VANILLA JS ARCHITECT</p>
+        <h1 class="hero-title">I build interactive web apps and browser games.</h1>
+        <p class="hero-lead">
+          I’m <strong>Anthony Combalicer</strong>, a 2nd-year BS Information Technology student at Forbes College.
+          I focus on responsive front-end systems, client-side state management, and real-time browser game loops—shipping zero-dependency builds you can open and test right now.
+        </p>
+
+        <div class="btns hero-btns">
+          <a class="btn primary" href="#projects">Explore projects</a>
+          <a class="btn ghost" href="resume.html" target="_blank" rel="noopener">View résumé</a>
+          <a class="btn ghost" href="assets/Anthony_Combalicer_Resume.pdf" download="Anthony_Combalicer_Resume.pdf">Download PDF</a>
+          <button class="btn subtle" type="button" data-open-cmd>
+            <span>Command menu</span>
+            <kbd data-cmd-kbd>⌘K</kbd>
+          </button>
+        </div>
+
+        <ul class="quick-links" aria-label="Direct profiles and contact">
+          <li>
+            <a href="https://github.com/anthonycombalicer66-maker" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a12 12 0 0 0-3.79 23.39c.6.11.82-.26.82-.58v-2.04c-3.34.73-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.09-.74.08-.73.08-.73 1.2.09 1.84 1.24 1.84 1.24 1.07 1.83 2.81 1.3 3.49 1 .11-.78.42-1.3.76-1.6-2.67-.3-5.47-1.33-5.47-5.93 0-1.31.47-2.38 1.24-3.22-.12-.3-.54-1.52.12-3.18 0 0 1.01-.32 3.3 1.23a11.5 11.5 0 0 1 6 0c2.29-1.55 3.3-1.23 3.3-1.23.66 1.66.24 2.88.12 3.18.77.84 1.24 1.91 1.24 3.22 0 4.61-2.81 5.62-5.49 5.92.43.37.82 1.1.82 2.22v3.29c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z"/></svg>
+              <span>github.com/anthonycombalicer66-maker</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://www.linkedin.com/in/anthony-combalicer-28a39a403" target="_blank" rel="noopener">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3V9Zm7 0h3.8v1.64h.05c.53-1 1.83-2.06 3.77-2.06 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.58c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.14 1.45-2.14 2.94V21h-4V9Z"/></svg>
+              <span>LinkedIn</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anthonycombalicer66@gmail.com&su=Internship%20Inquiry" target="_blank" rel="noopener" data-email-trigger>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg>
+              <span>anthonycombalicer66@gmail.com</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <div class="bento-band">
+      <div class="rail">
+        <div class="bento-grid node-frame">
+          <div class="bento-cell">
+            <span class="cell-label">Status</span>
+            <strong class="cell-value status-value"><span class="pulse-dot sm" aria-hidden="true"></span>Available</strong>
+            <span class="cell-sub">Remote or local internships</span>
+          </div>
+          <div class="bento-cell">
+            <span class="cell-label">Location</span>
+            <strong class="cell-value">Legazpi City, PH</strong>
+            <span class="cell-sub">Albay · UTC+8</span>
+          </div>
+          <div class="bento-cell">
+            <span class="cell-label">Local Time</span>
+            <strong class="cell-value mono-val"><time id="local-time">--:--:--</time></strong>
+            <span class="cell-sub" id="local-tz">Asia/Manila (PHT)</span>
+          </div>
+          <div class="bento-cell">
+            <span class="cell-label">Deployed</span>
+            <strong class="cell-value">3 Live Demos</strong>
+            <span class="cell-sub">CraftHub · Pixel-Descent · BiteRush</span>
+          </div>
+          <div class="bento-cell">
+            <span class="cell-label">GitHub</span>
+            <strong class="cell-value" id="gh-repo-stat">6 Public Repos</strong>
+            <span class="cell-sub" id="gh-sync-sub">Vanilla HTML · CSS · JS</span>
+          </div>
+          <div class="bento-cell">
+            <span class="cell-label">Education</span>
+            <strong class="cell-value">BSIT · 2nd Year</strong>
+            <span class="cell-sub">Forbes College · Exp. 2029</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <section id="about" class="band">
+      <div class="rail">
+        <div class="band-head">
+          <span class="band-index">01</span>
+          <div>
+            <h2>About &amp; Background</h2>
+            <p class="band-sub">How I approach front-end engineering, browser games, and team collaboration.</p>
+          </div>
+        </div>
+
+        <div class="about-grid node-frame">
+          <div class="about-copy">
+            <p>
+              Whether I’m engineering a five-filter search directory like <strong>CraftHub</strong>, a real-time fast-food storefront like <strong>BiteRush</strong>, or a single-file action RPG like <strong>Pixel-Descent</strong>, the foundation stays the same: responsive layouts, predictable client-side state, and readable vanilla JavaScript.
+            </p>
+            <p>
+              Outside of browser builds, I create JavaScript tournament bracket systems, organized the campus Intramurals Tekken Tournament at Forbes College, and study Java GUI development and MySQL in school. I’m looking for an internship where I can contribute production code, grow through code reviews, and ship dependable features with an engineering team.
+            </p>
+          </div>
+
+          <div class="about-cards">
+            <div class="info-card">
+              <div class="info-top">
+                <span class="mono-chip">EDUCATION</span>
+                <span class="info-year">2025 – 2029</span>
+              </div>
+              <h3>BS Information Technology</h3>
+              <p class="info-org">Forbes College · Legazpi City, Albay</p>
+              <p class="info-desc">Coursework in Java Programming, Java GUI (NetBeans), Database Management (MySQL), and Web Development.</p>
+            </div>
+
+            <div class="info-card">
+              <div class="info-top">
+                <span class="mono-chip">LEADERSHIP</span>
+                <span class="info-year">CAMPUS EVENT</span>
+              </div>
+              <h3>Intramurals Tekken Organizer</h3>
+              <p class="info-org">Forbes College Intramurals</p>
+              <p class="info-desc">Directed bracket scheduling, live match flow, and tournament operations backed by custom JS bracket tools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="activity" class="band">
+      <div class="rail">
+        <div class="band-head">
+          <span class="band-index">02</span>
+          <div>
+            <h2>Build Cadence &amp; GitHub</h2>
+            <p class="band-sub">90-day public commit activity synced in Philippine Time (UTC+8) from GitHub.</p>
+          </div>
+          <a class="head-link" href="https://github.com/anthonycombalicer66-maker" target="_blank" rel="noopener">View profile &rarr;</a>
+        </div>
+
+        <div class="activity-card node-frame">
+          <div class="activity-top">
+            <div>
+              <span class="mono-label">@anthonycombalicer66-maker</span>
+              <p class="activity-meta" id="gh-activity-note">12-week public activity window · hover or tap any cell to inspect</p>
+            </div>
+            <div class="heat-legend" aria-hidden="true">
+              <span>Less</span>
+              <i class="lv-0"></i>
+              <i class="lv-1"></i>
+              <i class="lv-2"></i>
+              <i class="lv-3"></i>
+              <i class="lv-4"></i>
+              <span>More</span>
+            </div>
+          </div>
+
+          <div class="heatmap-shell">
+            <div class="heatmap-days" aria-hidden="true">
+              <span></span>
+              <span>Mon</span>
+              <span></span>
+              <span>Wed</span>
+              <span></span>
+              <span>Fri</span>
+              <span></span>
+            </div>
+            <div class="heatmap-wrap">
+              <div id="gh-months" class="heatmap-months" aria-hidden="true"></div>
+              <div id="gh-heatmap" class="heatmap-grid" role="group" aria-label="12-week coding activity overview"></div>
+            </div>
+          </div>
+
+          <div class="activity-foot">
+            <span id="heat-readout" class="heat-readout">Focus areas: Client-side UI state, HTML5 game loops, tournament utilities</span>
+            <span class="mono-muted" id="gh-updated-tag">GitHub Pages · Live</span>
+          </div>
+
+          <div id="gh-recent-feed" class="recent-feed" aria-label="Recent public repository updates"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="band">
+      <div class="rail">
+        <div class="band-head">
+          <span class="band-index">03</span>
+          <div>
+            <h2>Technical Stack</h2>
+            <p class="band-sub">Tools and languages grouped by what I have actually built and shipped.</p>
+          </div>
+        </div>
+
+        <div class="stack-grid node-frame">
+          <div class="stack-cell">
+            <div class="stack-head">
+              <span class="stack-num">01</span>
+              <h3>Front-End &amp; Interactive UI</h3>
+            </div>
+            <p class="stack-used">
+              Shipped in <a href="#project-crafthub">CraftHub</a>, <a href="#project-biterush">BiteRush</a>, and <a href="#project-pixel-descent">Pixel-Descent</a>
+            </p>
+            <ul class="tags">
+              <li>HTML5</li>
+              <li>CSS3</li>
+              <li>JavaScript (ES6+)</li>
+              <li>Responsive UI</li>
+              <li>State Management</li>
+              <li>Game Loops</li>
+            </ul>
+          </div>
+
+          <div class="stack-cell">
+            <div class="stack-head">
+              <span class="stack-num">02</span>
+              <h3>Java &amp; Databases</h3>
+            </div>
+            <p class="stack-used">BSIT academic coursework and desktop application builds</p>
+            <ul class="tags">
+              <li>Java</li>
+              <li>Java GUI (NetBeans)</li>
+              <li>MySQL (XAMPP)</li>
+              <li>Relational Schemas</li>
+            </ul>
+          </div>
+
+          <div class="stack-cell">
+            <div class="stack-head">
+              <span class="stack-num">03</span>
+              <h3>Workflow &amp; Deployment</h3>
+            </div>
+            <p class="stack-used">Source control, static hosting, and release packaging</p>
+            <ul class="tags">
+              <li>Git</li>
+              <li>GitHub</li>
+              <li>GitHub Pages</li>
+              <li>DevTools Debugging</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="band">
+      <div class="rail">
+        <div class="band-head projects-head">
+          <span class="band-index">04</span>
+          <div>
+            <h2>Featured Projects</h2>
+            <p class="band-sub">Live deployments paired with engineering breakdowns, code previews, and source links.</p>
+          </div>
+          <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
+            <button class="filter-btn is-active" type="button" role="tab" aria-selected="true" data-filter="all">All</button>
+            <button class="filter-btn" type="button" role="tab" aria-selected="false" data-filter="web">Web Apps</button>
+            <button class="filter-btn" type="button" role="tab" aria-selected="false" data-filter="game">Games</button>
+            <button class="filter-btn" type="button" role="tab" aria-selected="false" data-filter="tools">Tools &amp; Events</button>
+          </div>
+        </div>
+
+        <div class="cases-stack">
+          <article id="project-crafthub" class="case-card node-frame" data-category="web" data-repo="CraftHub">
+            <div class="case-meta">
+              <span class="case-id">PRJ-01 // INTERACTIVE WEB APP <span class="repo-stamp" data-repo-stamp></span></span>
+              <div class="case-links-top">
+                <a href="https://anthonycombalicer66-maker.github.io/CraftHub/" target="_blank" rel="noopener">Live demo &nearr;</a>
+                <a href="https://github.com/anthonycombalicer66-maker/CraftHub" target="_blank" rel="noopener">Source &nearr;</a>
+              </div>
+            </div>
+
+            <div class="case-body">
+              <div class="case-visual">
+                <div class="frame">
+                  <div class="chrome" aria-hidden="true">
+                    <span class="dots"><i></i><i></i><i></i></span>
+                    <span class="chrome-url">anthonycombalicer66-maker.github.io/CraftHub</span>
+                  </div>
+                  <button type="button" aria-label="Enlarge CraftHub screenshot">
+                    <picture>
+                      <source srcset="assets/crafthub.webp" type="image/webp">
+                      <img src="assets/crafthub.jpg" alt="CraftHub home page showing a Minecraft landscape, navigation buttons, and multi-filter article directory" width="1400" height="718" loading="lazy" decoding="async">
+                    </picture>
+                  </button>
+                </div>
+
+                <div class="metric-strip">
+                  <div><b>5 Filters</b><span>Simultaneous queries</span></div>
+                  <div><b>0 Reloads</b><span>Instant DOM sync</span></div>
+                  <div><b>Vanilla JS</b><span>Zero dependencies</span></div>
+                </div>
+              </div>
+
+              <div class="case-content">
+                <h3 data-scramble="CraftHub">CraftHub</h3>
+                <p class="case-lead">A searchable Minecraft guide hub where players filter survival tips, creative builds, and tutorials without leaving the page.</p>
+
+                <ul class="feat">
+                  <li>Instant keyword search combined with five independent filters (category, difficulty, topic, game mode, and version)</li>
+                  <li>“Surprise me” discovery action that picks a random matching guide</li>
+                  <li>Live result counter that stays synced with every filter combination</li>
+                  <li>Custom pixel-inspired typography and Minecraft visual styling</li>
+                </ul>
+
+                <dl class="story">
+                  <div><dt>Goal</dt><dd>Consolidate scattered Minecraft guides into one fast, filterable directory.</dd></div>
+                  <div><dt>Challenge</dt><dd>Combining free-text search with five simultaneous dropdown filters without stale counts or slow DOM reflows.</dd></div>
+                  <div><dt>Outcome &amp; next step</dt><dd>Built a single source-of-truth filter state in vanilla JS; next step is syncing active filters to URL query parameters so searches are shareable.</dd></div>
+                </dl>
+
+                <details class="code-drawer">
+                  <summary><span>Under the hood: synchronized multi-filter pipeline</span><span class="drawer-tag">JS</span></summary>
+                  <div class="code-toolbar">
+                    <span class="code-file">filter.js</span>
+                    <button class="copy-code-btn" type="button">Copy snippet</button>
+                  </div>
+                  <pre><code>function filterGuides(guides, state) {
+  const q = state.query.trim().toLowerCase();
+  return guides.filter((item) =&gt; {
+    const matchesText = !q || item.title.toLowerCase().includes(q) || item.tags.some((t) =&gt; t.includes(q));
+    return matchesText
+      &amp;&amp; (state.category === "all" || item.category === state.category)
+      &amp;&amp; (state.difficulty === "all" || item.difficulty === state.difficulty)
+      &amp;&amp; (state.mode === "all" || item.mode === state.mode);
+  });
+}</code></pre>
+                </details>
+
+                <div class="case-foot">
+                  <ul class="tags">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                  </ul>
+                  <div class="btns">
+                    <a class="btn primary" href="https://anthonycombalicer66-maker.github.io/CraftHub/" target="_blank" rel="noopener">Live demo</a>
+                    <a class="btn ghost" href="https://github.com/anthonycombalicer66-maker/CraftHub" target="_blank" rel="noopener">View code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article id="project-pixel-descent" class="case-card node-frame" data-category="game" data-repo="Pixel-Descent">
+            <div class="case-meta">
+              <span class="case-id">PRJ-02 // BROWSER ACTION RPG <span class="repo-stamp" data-repo-stamp></span></span>
+              <div class="case-links-top">
+                <a href="https://anthonycombalicer66-maker.github.io/Pixel-Descent/" target="_blank" rel="noopener">Play live &nearr;</a>
+                <a href="https://github.com/anthonycombalicer66-maker/Pixel-Descent" target="_blank" rel="noopener">Source &nearr;</a>
+              </div>
+            </div>
+
+            <div class="case-body rev">
+              <div class="case-visual">
+                <div class="frame">
+                  <div class="chrome" aria-hidden="true">
+                    <span class="dots"><i></i><i></i><i></i></span>
+                    <span class="chrome-url">anthonycombalicer66-maker.github.io/Pixel-Descent</span>
+                  </div>
+                  <button type="button" aria-label="Enlarge Pixel-Descent screenshot">
+                    <picture>
+                      <source srcset="assets/pixel-descent.webp" type="image/webp">
+                      <img src="assets/pixel-descent.jpg" alt="Pixel-Descent gameplay in Floor 1 Lava Cavern showing a live minimap, vitality and mana orbs, and skill hotbar" width="1400" height="719" loading="lazy" decoding="async">
+                    </picture>
+                  </button>
+                </div>
+
+                <div class="metric-strip">
+                  <div><b>1 File</b><span>Self-contained HTML</span></div>
+                  <div><b>Live HUD</b><span>Orbs, XP &amp; minimap</span></div>
+                  <div><b>No Engine</b><span>Custom JS loop</span></div>
+                </div>
+              </div>
+
+              <div class="case-content">
+                <h3 data-scramble="Pixel-Descent">Pixel-Descent</h3>
+                <p class="case-lead">An experimental action RPG engineered to run entirely from a single HTML file—battle through dungeon floors, earn XP, and manage skills and potions.</p>
+
+                <ul class="feat">
+                  <li>Floor-based dungeon progression (starting at Floor 1 – Lava Cavern) with a live minimap</li>
+                  <li>Real-time HUD featuring vitality and mana orbs, XP progress, and a skill/potion hotbar</li>
+                  <li>Character progression with gold drops and passive skill points</li>
+                  <li>Zero installs or external dependencies—loads straight in the browser</li>
+                </ul>
+
+                <p class="play-note"><strong>Desktop controls:</strong> Best experienced with keyboard and mouse.</p>
+
+                <dl class="story">
+                  <div><dt>Goal</dt><dd>Test how complete a real-time action RPG loop and HUD could be inside a single self-contained HTML file.</dd></div>
+                  <div><dt>Challenge</dt><dd>Keeping player stats, cooldowns, enemies, and minimap rendering synchronized every frame without a game engine.</dd></div>
+                  <div><dt>Outcome &amp; next step</dt><dd>Structured a clean frame loop and modular game state; next step is splitting modules and adding touch controls for mobile play.</dd></div>
+                </dl>
+
+                <details class="code-drawer">
+                  <summary><span>Under the hood: delta-timed dungeon frame loop</span><span class="drawer-tag">JS</span></summary>
+                  <div class="code-toolbar">
+                    <span class="code-file">loop.js</span>
+                    <button class="copy-code-btn" type="button">Copy snippet</button>
+                  </div>
+                  <pre><code>let lastTick = performance.now();
+function gameLoop(now) {
+  const dt = Math.min((now - lastTick) / 1000, 0.05);
+  lastTick = now;
+  updatePlayer(dt);
+  updateEnemiesAndProjectiles(dt);
+  renderDungeonCanvas();
+  syncHudOrbsAndMinimap();
+  requestAnimationFrame(gameLoop);
+}</code></pre>
+                </details>
+
+                <div class="case-foot">
+                  <ul class="tags">
+                    <li>HTML5</li>
+                    <li>JavaScript</li>
+                    <li>Game Loop</li>
+                    <li>Single-file RPG</li>
+                  </ul>
+                  <div class="btns">
+                    <a class="btn primary" href="https://anthonycombalicer66-maker.github.io/Pixel-Descent/" target="_blank" rel="noopener">Play it live</a>
+                    <a class="btn ghost" href="https://github.com/anthonycombalicer66-maker/Pixel-Descent" target="_blank" rel="noopener">View code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article id="project-biterush" class="case-card node-frame" data-category="web" data-repo="BiteRushAndCraftHub-Updated-">
+            <div class="case-meta">
+              <span class="case-id">PRJ-03 // E-COMMERCE STOREFRONT <span class="repo-stamp" data-repo-stamp></span></span>
+              <div class="case-links-top">
+                <a href="https://anthonycombalicer66-maker.github.io/BiteRush/" target="_blank" rel="noopener">Live demo &nearr;</a>
+                <a href="https://github.com/anthonycombalicer66-maker/BiteRushAndCraftHub-Updated-" target="_blank" rel="noopener">Source &nearr;</a>
+              </div>
+            </div>
+
+            <div class="case-body">
+              <div class="case-visual">
+                <div class="frame">
+                  <div class="chrome" aria-hidden="true">
+                    <span class="dots"><i></i><i></i><i></i></span>
+                    <span class="chrome-url">anthonycombalicer66-maker.github.io/BiteRush</span>
+                  </div>
+                  <button type="button" aria-label="Enlarge BiteRush screenshot">
+                    <picture>
+                      <source srcset="assets/biterush.webp" type="image/webp">
+                      <img src="assets/biterush.jpg" alt="BiteRush storefront featuring The Infamous Cheese Burger banner, meal-time tabs, and sortable featured menu" width="1400" height="712" loading="lazy" decoding="async">
+                    </picture>
+                  </button>
+                </div>
+
+                <div class="metric-strip">
+                  <div><b>4 Menus</b><span>Meal-time browsing</span></div>
+                  <div><b>Live Cart</b><span>Wishlist &amp; totals</span></div>
+                  <div><b>PHP Pricing</b><span>Local storefront UX</span></div>
+                </div>
+              </div>
+
+              <div class="case-content">
+                <h3 data-scramble="BiteRush">BiteRush</h3>
+                <p class="case-lead">A fast-food ordering storefront modeled after modern delivery apps, allowing diners to browse by meal time, favorite dishes, and build a live cart.</p>
+
+                <ul class="feat">
+                  <li>Meal-time categories across breakfast, lunch, dinner, and burgers &amp; fries</li>
+                  <li>Live search, wishlist toggles, and cart item counters updated in real time</li>
+                  <li>Sorting controls and dish availability filters</li>
+                  <li>Featured bestseller hero banner with clear Philippine peso pricing</li>
+                </ul>
+
+                <dl class="story">
+                  <div><dt>Goal</dt><dd>Recreate a complete, responsive food-ordering UX from browsing to cart management.</dd></div>
+                  <div><dt>Challenge</dt><dd>Coordinating cart quantities, wishlist badges, search queries, and sorting simultaneously across components.</dd></div>
+                  <div><dt>Outcome &amp; next step</dt><dd>Built synchronized client-side cart and filter logic in plain JS; next step is persisting cart state in localStorage and adding a checkout summary.</dd></div>
+                </dl>
+
+                <details class="code-drawer">
+                  <summary><span>Under the hood: reactive cart &amp; badge state update</span><span class="drawer-tag">JS</span></summary>
+                  <div class="code-toolbar">
+                    <span class="code-file">cart.js</span>
+                    <button class="copy-code-btn" type="button">Copy snippet</button>
+                  </div>
+                  <pre><code>function updateCartItem(menuId, delta) {
+  const nextQty = (cartState.get(menuId) || 0) + delta;
+  if (nextQty &lt;= 0) cartState.delete(menuId);
+  else cartState.set(menuId, nextQty);
+  const totalCount = Array.from(cartState.values()).reduce((sum, n) =&gt; sum + n, 0);
+  cartBadgeEl.textContent = String(totalCount);
+  renderCartSummary();
+}</code></pre>
+                </details>
+
+                <div class="case-foot">
+                  <ul class="tags">
+                    <li>HTML5</li>
+                    <li>CSS3</li>
+                    <li>JavaScript</li>
+                  </ul>
+                  <div class="btns">
+                    <a class="btn primary" href="https://anthonycombalicer66-maker.github.io/BiteRush/" target="_blank" rel="noopener">Live demo</a>
+                    <a class="btn ghost" href="https://github.com/anthonycombalicer66-maker/BiteRushAndCraftHub-Updated-" target="_blank" rel="noopener">View code</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div id="tools-block" class="tools-block" data-category="tools">
+          <h3 class="sub-heading">Tournament tools &amp; campus leadership</h3>
+          <div class="minis-grid node-frame">
+            <div class="mini-cell">
+              <span class="mono-chip">TOOL // JS</span>
+              <h4>Tekken 7 Bracket System</h4>
+              <p>A JavaScript tournament bracket generator built for running Tekken 7 events, including campus Intramurals.</p>
+              <div class="mini-links">
+                <a href="https://github.com/anthonycombalicer66-maker/Tekken-7-Bracket-System" target="_blank" rel="noopener">View code &rarr;</a>
+                <button id="bracket-sim-toggle" class="mini-sim-btn" type="button" aria-expanded="false" aria-controls="bracket-sim-panel">Try interactive bracket</button>
+              </div>
+            </div>
+            <div class="mini-cell">
+              <span class="mono-chip">TOOL // JS</span>
+              <h4>MLBB Bracket System</h4>
+              <p>A bracket utility for organizing and tracking Mobile Legends tournament matches cleanly.</p>
+              <a href="https://github.com/anthonycombalicer66-maker/MLBB-Bracket-System" target="_blank" rel="noopener">View code &rarr;</a>
+            </div>
+            <div class="mini-cell">
+              <span class="mono-chip">LEADERSHIP</span>
+              <h4>Intramurals Tekken Organizer</h4>
+              <p>Led bracket scheduling, match flow, and live event operations for the Forbes College Intramurals Tekken tournament.</p>
+              <a href="resume.html" target="_blank" rel="noopener">See on résumé &rarr;</a>
+            </div>
+          </div>
+
+          <div id="bracket-sim-panel" class="bracket-sim node-frame" hidden>
+            <div class="bsim-head">
+              <div>
+                <span class="mono-chip">LIVE SANDBOX // SINGLE ELIMINATION</span>
+                <h4>Tekken 7 Intramurals Bracket Preview</h4>
+              </div>
+              <div class="bsim-actions">
+                <button id="bsim-shuffle" class="bsim-btn" type="button">Shuffle seeds</button>
+                <button id="bsim-reset" class="bsim-btn" type="button">Reset</button>
+              </div>
+            </div>
+            <p class="bsim-hint">Click any player slot in Semifinals or Grand Finals to advance the match winner.</p>
+            <div id="bsim-board" class="bsim-board"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-band">
+      <div class="hero-grid-bg" aria-hidden="true"></div>
+      <div class="rail contact-inner">
+        <span class="band-index">05</span>
+        <h2>Let’s build something together.</h2>
+        <p class="contact-lead">I’m actively looking for web or game development internship opportunities where I can ship production features and grow alongside an engineering team.</p>
+
+        <div class="btns">
+          <a class="btn primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=anthonycombalicer66@gmail.com&su=Internship%20Inquiry" target="_blank" rel="noopener" data-email-trigger>Email me</a>
+          <a class="btn ghost" href="resume.html" target="_blank" rel="noopener">View résumé</a>
+          <a class="btn ghost" href="assets/Anthony_Combalicer_Resume.pdf" download="Anthony_Combalicer_Resume.pdf">Download PDF</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/anthony-combalicer-28a39a403" target="_blank" rel="noopener">LinkedIn</a>
+          <a class="btn ghost" href="https://github.com/anthonycombalicer66-maker" target="_blank" rel="noopener">GitHub</a>
+        </div>
+
+        <p class="avail">
+          Legazpi City, Albay · <a href="tel:+639695362515">09695362515</a>
+          <button id="copy-phone-btn" class="inline-copy-btn" type="button" data-phone="09695362515">Copy</button>
+          · Open to remote or local internships · BSIT (Expected 2029), Forbes College
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="rail footer-bar">
+      <span>© 2026 Anthony Combalicer</span>
+      <span class="footer-hint">Shortcuts: <kbd data-cmd-kbd>⌘K</kbd> menu · <kbd>1</kbd>–<kbd>5</kbd> sections · <kbd>T</kbd> theme</span>
+      <a class="top-link" href="#top">&uarr; Top</a>
+    </div>
+  </footer>
+
+  <dialog id="cmd-modal" class="cmd-modal" aria-label="Command palette">
+    <div class="cmd-card">
+      <div class="cmd-head">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input id="cmd-input" class="cmd-input" type="text" placeholder="Type a command or jump to a section..." autocomplete="off" aria-label="Search commands">
+        <button id="cmd-close" class="cmd-esc" type="button">Esc</button>
+      </div>
+      <ul id="cmd-list" class="cmd-list" role="listbox" aria-label="Available commands"></ul>
+      <div class="cmd-foot">
+        <span><kbd>&uarr;</kbd> <kbd>&darr;</kbd> select</span>
+        <span><kbd>&crarr;</kbd> open</span>
+        <span><kbd>Esc</kbd> close</span>
+      </div>
+    </div>
+  </dialog>
+
+  <dialog id="lb" aria-label="Screenshot preview">
+    <div class="lb-inner">
+      <div class="lb-bar">
+        <p id="lb-caption" class="lb-caption"></p>
+        <button id="lb-close" type="button" aria-label="Close screenshot preview">Close (Esc)</button>
+      </div>
+      <img id="lb-img" alt="">
+    </div>
+  </dialog>
+
+  <dialog id="email-modal" class="email-modal" aria-labelledby="email-modal-title">
+    <div class="em-card">
+      <div class="em-head">
+        <div>
+          <p class="em-eyebrow">Direct Message</p>
+          <h3 id="email-modal-title">Email Anthony Combalicer</h3>
+        </div>
+        <button id="em-close" class="em-close" type="button" aria-label="Close email dialog">Close (Esc)</button>
+      </div>
+
+      <div class="em-addr-row">
+        <span class="em-addr">anthonycombalicer66@gmail.com</span>
+        <button id="em-copy" class="em-copy" type="button" data-email="anthonycombalicer66@gmail.com">Copy email</button>
+      </div>
+      <p id="em-status" class="em-status" role="status" aria-live="polite"></p>
+
+      <div class="em-fields">
+        <label class="em-label" for="em-subject">Subject</label>
+        <input id="em-subject" class="em-input" type="text" value="Internship Inquiry">
+
+        <label class="em-label" for="em-body">Message (optional — pre-fills your email)</label>
+        <textarea id="em-body" class="em-textarea" rows="4" placeholder="Hi Anthony, I saw your portfolio and would love to discuss an internship opportunity..."></textarea>
+      </div>
+
+      <div class="em-actions">
+        <a id="em-gmail" class="btn primary" href="https://mail.google.com/mail/?view=cm&fs=1&to=anthonycombalicer66@gmail.com&su=Internship%20Inquiry" target="_blank" rel="noopener">Compose in Gmail</a>
+        <a id="em-mailto" class="btn ghost" href="mailto:anthonycombalicer66@gmail.com?subject=Internship%20Inquiry">Open Mail App</a>
+      </div>
+    </div>
+  </dialog>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
