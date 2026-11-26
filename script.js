@@ -659,7 +659,11 @@
     }
   }
 
-  function renderHeatmap(commitMap) {
+  function toLocalDateKey(d) {
+    return d.getFullYear() + "-" + String(d.getMonth() + 1).padStart(2, "0") + "-" + String(d.getDate()).padStart(2, "0");
+  }
+
+  function renderHeatmap(commitMap, levelMap) {
     if (!heatmapEl) return;
     heatmapEl.innerHTML = "";
     if (monthsEl) monthsEl.innerHTML = "";
@@ -671,7 +675,6 @@
     var startSunday = new Date(todayMidnight.getFullYear(), todayMidnight.getMonth(), todayMidnight.getDate() - dayOfWeek - (weeks - 1) * 7);
 
     var frag = document.createDocumentFragment();
-    var pattern = [0, 1, 2, 0, 1, 3, 1, 0, 2, 1, 0, 2, 4, 1, 0, 1, 2, 1, 0, 3, 2, 1, 0, 1, 2, 0, 3, 1];
     var lastMonth = -1;
 
     for (var w = 0; w < weeks; w++) {
@@ -688,13 +691,14 @@
       for (var dIdx = 0; dIdx < 7; dIdx++) {
         var cellDate = new Date(startSunday.getFullYear(), startSunday.getMonth(), startSunday.getDate() + w * 7 + dIdx);
         var isFuture = cellDate > todayMidnight;
-        var key = toManilaDateKey(cellDate);
+        var key = toLocalDateKey(cellDate);
         var count = commitMap && commitMap[key] ? commitMap[key] : 0;
-        var level = isFuture
-          ? 0
-          : commitMap
-            ? (count === 0 ? 0 : count === 1 ? 1 : count <= 3 ? 2 : count <= 6 ? 3 : 4)
-            : pattern[(w * 7 + dIdx) % pattern.length];
+        var level = 0;
+        if (!isFuture && commitMap) {
+          level = levelMap && typeof levelMap[key] === "number"
+            ? levelMap[key]
+            : (count === 0 ? 0 : count === 1 ? 1 : count <= 3 ? 2 : count <= 6 ? 3 : 4);
+        }
 
         var cell = document.createElement("button");
         cell.type = "button";
@@ -704,7 +708,7 @@
           ? dateText + " — Upcoming"
           : commitMap
             ? dateText + " — " + (count ? count + " contribution" + (count > 1 ? "s" : "") : "No public activity logged")
-            : dateText + " — " + (level === 0 ? "Rest / planning" : level === 1 ? "Light iteration" : level === 2 ? "Feature build" : "Heavy shipping session");
+            : dateText + " — Loading activity…";
 
         cell.setAttribute("aria-label", labelText);
         cell.setAttribute("data-info", labelText);
@@ -762,46 +766,63 @@
   }
 
   (function loadGitHubLive() {
-    var cacheKey = "gh_snapshot_v2";
-    function applyData(profile, events, repos) {
+    var cacheKey = "gh_snapshot_v3";
+    var cacheTtl = 600000; // 10 minutes
+
+    function applyCalendar(days) {
+      var counts = {};
+      var levels = {};
+      var total = 0;
+      var latest = "";
+      days.forEach(function (d) {
+        if (!d || !d.date) return;
+        counts[d.date] = d.count || 0;
+        levels[d.date] = typeof d.level === "number" ? d.level : 0;
+        total += d.count || 0;
+        if (d.count > 0 && d.date > latest) latest = d.date;
+      });
+      renderHeatmap(counts, levels);
+      if (updatedTagEl) {
+        updatedTagEl.textContent = latest
+          ? "Synced · Last contribution " + new Date(latest + "T00:00:00").toLocaleDateString("en-US", { month: "short", day: "numeric" })
+          : "Synced · No recent contributions";
+      }
+    }
+
+    function applyEvents(events) {
+      if (!Array.isArray(events) || !events.length) return;
+      var counts = {};
+      events.forEach(function (ev) {
+        if (!ev || !ev.created_at) return;
+        var day = toManilaDateKey(new Date(ev.created_at));
+        var weight = 1;
+        if (ev.type === "PushEvent" && ev.payload) {
+          weight = typeof ev.payload.size === "number" && ev.payload.size > 0
+            ? ev.payload.size
+            : Array.isArray(ev.payload.commits) && ev.payload.commits.length
+              ? ev.payload.commits.length
+              : 1;
+        }
+        counts[day] = (counts[day] || 0) + weight;
+      });
+      renderHeatmap(counts);
+      if (updatedTagEl && events[0] && events[0].created_at) {
+        var latest = new Date(events[0].created_at).toLocaleDateString("en-US", {
+          timeZone: "Asia/Manila", month: "short", day: "numeric"
+        });
+        updatedTagEl.textContent = "Synced · Latest push " + latest;
+      }
+    }
+
+    function applyProfile(profile, repos) {
       if (profile && typeof profile.public_repos === "number" && repoStatEl) {
         repoStatEl.textContent = profile.public_repos + " Public Repos";
       }
-      if (Array.isArray(events) && events.length) {
-        var counts = {};
-        events.forEach(function (ev) {
-          if (ev && ev.created_at) {
-            var day = toManilaDateKey(new Date(ev.created_at));
-            var weight = 1;
-            if (ev.type === "PushEvent" && ev.payload) {
-              weight = typeof ev.payload.size === "number" && ev.payload.size > 0
-                ? ev.payload.size
-                : Array.isArray(ev.payload.commits) && ev.payload.commits.length
-                  ? ev.payload.commits.length
-                  : 1;
-            }
-            counts[day] = (counts[day] || 0) + weight;
-          }
-        });
-        renderHeatmap(counts);
-        renderRecentFeed(events);
-        if (updatedTagEl && events[0] && events[0].created_at) {
-          var latest = new Date(events[0].created_at).toLocaleDateString("en-US", {
-            timeZone: "Asia/Manila",
-            month: "short",
-            day: "numeric"
-          });
-          updatedTagEl.textContent = "Synced · Latest push " + latest;
-        }
-      }
       if (Array.isArray(repos) && repos.length) {
         var repoMap = {};
-        repos.forEach(function (r) {
-          if (r && r.name) repoMap[r.name] = r;
-        });
+        repos.forEach(function (r) { if (r && r.name) repoMap[r.name] = r; });
         document.querySelectorAll("[data-repo]").forEach(function (card) {
-          var repoName = card.getAttribute("data-repo");
-          var info = repoMap[repoName];
+          var info = repoMap[card.getAttribute("data-repo")];
           var stamp = card.querySelector("[data-repo-stamp]");
           if (info && stamp && info.pushed_at) {
             var pushed = new Date(info.pushed_at).toLocaleDateString("en-US", { month: "short", year: "numeric" });
@@ -812,12 +833,24 @@
       }
     }
 
+    function applyAll(data) {
+      applyProfile(data.profile, data.repos);
+      if (Array.isArray(data.calendar) && data.calendar.length) applyCalendar(data.calendar);
+      else if (Array.isArray(data.events) && data.events.length) applyEvents(data.events);
+      else if (updatedTagEl) updatedTagEl.textContent = "Activity unavailable right now";
+      if (Array.isArray(data.events)) renderRecentFeed(data.events);
+    }
+
+    function getJson(url) {
+      return fetch(url).then(function (r) { return r.ok ? r.json() : null; }).catch(function () { return null; });
+    }
+
     try {
       var cached = sessionStorage.getItem(cacheKey);
       if (cached) {
         var parsed = JSON.parse(cached);
-        if (parsed && Date.now() - parsed.ts < 600000) {
-          applyData(parsed.profile, parsed.events, parsed.repos);
+        if (parsed && Date.now() - parsed.ts < cacheTtl) {
+          applyAll(parsed.data);
           return;
         }
       }
@@ -826,20 +859,23 @@
     if (typeof fetch !== "function") return;
 
     Promise.all([
-      fetch("https://api.github.com/users/" + ghUser).then(function (r) { return r.ok ? r.json() : null; }),
-      fetch("https://api.github.com/users/" + ghUser + "/events/public?per_page=100").then(function (r) { return r.ok ? r.json() : null; }),
-      fetch("https://api.github.com/users/" + ghUser + "/repos?sort=updated&per_page=20").then(function (r) { return r.ok ? r.json() : null; })
+      getJson("https://github-contributions-api.jogruber.de/v4/" + ghUser + "?y=last"),
+      getJson("https://api.github.com/users/" + ghUser),
+      getJson("https://api.github.com/users/" + ghUser + "/events/public?per_page=100"),
+      getJson("https://api.github.com/users/" + ghUser + "/repos?sort=updated&per_page=20")
     ]).then(function (res) {
-      var profile = res[0];
-      var events = res[1];
-      var repos = res[2];
-      if (profile || events || repos) {
-        applyData(profile, events, repos);
-        try {
-          sessionStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), profile: profile, events: events, repos: repos }));
-        } catch (e) {}
+      var data = {
+        calendar: res[0] && Array.isArray(res[0].contributions) ? res[0].contributions : null,
+        profile: res[1],
+        events: res[2],
+        repos: res[3]
+      };
+      applyAll(data);
+      // Only cache a good result so a failed call never freezes stale/empty data
+      if (data.calendar || data.events) {
+        try { sessionStorage.setItem(cacheKey, JSON.stringify({ ts: Date.now(), data: data })); } catch (e) {}
       }
-    }).catch(function () {});
+    });
   })();
 
   var sectionNavLinks = Array.prototype.slice.call(document.querySelectorAll('.nav-links a[href^="#"]'));
